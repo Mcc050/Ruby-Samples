@@ -1,0 +1,60 @@
+puts "Text to search: "
+text = gets.chomp
+
+puts "Words to redact: "
+redact = gets.chomp
+
+words = text.split(" ")
+words.each do |word|
+  if word == redact
+    print "REDACTED "
+    else
+  print word + " "
+  end
+end
+
+---------------------------------------------------------------------------------------------------------------
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+
+s.each do |sub_array| sub_array.each do |alp|
+  puts alp
+  end
+end
+-----------------------------------------------------------------------------------------------------------------
+secret_identities = {
+  "The Batman" => "Bruce Wayne",
+  "Superman" => "Clark Kent",
+  "Wonder Woman" => "Diana Prince",
+  "Freakazoid" => "Dexter Douglas"
+}
+
+secret_identities.each do |x, y|
+  puts "#{x}: #{y}"
+end
+-------------------------------------------------------------------------------------------------------------------
+lunch_order = {
+  "Ryan" => "wonton soup",
+  "Eric" => "hamburger",
+  "Jimmy" => "sandwich",
+  "Sasha" => "salad",
+  "Cole" => "taco"
+}
+
+lunch_order.each {|x, y| puts "#{y}"}
+
+---------------------------------------------------------------------------------------------------------------------
+puts "Insert text here:"
+text = gets.chomp
+words = text.split(" ")
+frequencies = Hash.new(0)
+words.each do
+    |word| frequencies[word]+= 1
+end
+frequencies = frequencies.sort_by do |word, count|
+  count
+end
+frequencies.reverse!
+
+frequencies.each do |word, frequency|
+  puts word + " " + frequency.to_s
+end
